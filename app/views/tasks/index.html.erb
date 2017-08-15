@@ -1,0 +1,11 @@
+<h1>All Tasks</h1>
+
+<% @tasks.each_with_index do |task| %>
+  <%= link_to task.title, task_path(task) %>
+  <p><%= task.title %></p>
+  <p><%= task.status %></p>
+  <%= link_to "Delete", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<% end %>
+
